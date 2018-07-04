@@ -1,9 +1,10 @@
 import { Store, Action } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd';
 import { Injectable } from '@angular/core';
+import { Type } from '@angular/core';
 
 export interface Iwe7Editor2Interface {
-    component: any;
+    component: Type<any>;
     action: (val: any) => Action;
     title: string;
 }
@@ -18,7 +19,7 @@ export class Iwe7Editor2Service {
         public store: Store<any>
     ) { }
 
-    set(name: string, value: Iwe7Editor2Interface) {
+    set(name: string, value: any) {
         this.map.set(name, value);
     }
 
